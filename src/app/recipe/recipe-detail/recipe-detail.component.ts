@@ -26,12 +26,16 @@ id:number;
       }
     )
   }
-  //membuat method onAddShoppingList
+  //membuat method onAddShoppingLists
   onAddShoppingList(){
-    this.recipeService.addIngredientsShoppingList(this.recipe.ingredient);
+    this.recipeService.addIngredientsShoppingList(this.recipe.ingredients);
   }
   onEditRecipe(){
     this.router.navigate(['edit'],{relativeTo:this.route});
+  }
+  onDeleteRecipe(){
+    this.recipeService.deleteRecipe(this.id);
+    this.router.navigate(['/recipes']);
   }
 
 }
